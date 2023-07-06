@@ -11,7 +11,8 @@ function App() {
   const [search, setSearch] = useState("");
   const [filerChange, setFilterChange] = useState(false);
   const getData = async () => {
-    const { data } = await axios.get(`https://fakestoreapi.com/products`);
+    const url = import.meta.env.VITE_REACT_APP_BASE_URL;
+    const { data } = await axios.get(url);
     setData(data);
     setAllProducts(data);
   };
